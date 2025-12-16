@@ -18,10 +18,11 @@ return {
 			},
 			keymaps = {
 				vim.keymap.set("n", "-", "<CMD>Oil --float <CR>", { desc = "Open parent directory" }),
+				["q"] = "actions.close",
 			},
 			float = {
 				-- Padding around the floating window
-				padding = 5,
+				padding = 10,
 				border = "rounded",
 			},
 		})

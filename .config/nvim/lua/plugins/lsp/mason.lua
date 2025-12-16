@@ -22,11 +22,12 @@ return {
 		mason_lspconfig.setup({
 			ensure_installed = {
 				"lua_ls",
+        "eslint",
 				"html",
 				"cssls",
-				"tsserver",
-				"emmet_ls",
+				"ts_ls",
 				"tailwindcss",
+				"pyright",
 			},
 			automatic_installation = true,
 		})
@@ -38,7 +39,8 @@ return {
 				"stylua",
 				-- linters
 				"pylint",
-				"eslint_d",
+				"isort", -- python formatter
+				"black", -- python formatter
 			},
 		})
 	end,

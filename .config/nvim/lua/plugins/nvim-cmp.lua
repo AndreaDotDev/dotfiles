@@ -27,12 +27,13 @@ return {
 			mapping = cmp.mapping.preset.insert({
 				["<C-k>"] = cmp.mapping.select_prev_item(),
 				["<C-j>"] = cmp.mapping.select_next_item(),
-				["<C-Space>"] = cmp.mapping.complete(),
+				["<Tab>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.abort(),
 				["<CR>"] = cmp.mapping.confirm({ select = false }),
 			}),
 			-- sources for autocompletition
 			sources = cmp.config.sources({
+				{ name = "codeium" },
 				{ name = "nvim_lsp" },
 				{ name = "luasnip" },
 				{ name = "buffer" },
