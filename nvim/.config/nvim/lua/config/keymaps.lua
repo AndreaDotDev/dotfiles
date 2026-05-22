@@ -33,3 +33,8 @@ vim.keymap.set("n", "<C-k>", "<Cmd>wincmd k<CR>", { silent = true })
 vim.keymap.set("n", "<C-j>", "<Cmd>wincmd j<CR>", { silent = true })
 vim.keymap.set("n", "<C-h>", "<Cmd>wincmd h<CR>", { silent = true })
 vim.keymap.set("n", "<C-l>", "<Cmd>wincmd l<CR>", { silent = true })
+
+-- restart command keymap
+vim.keymap.set("n", "<Leader>re", "<cmd>restart<cr>", {
+  desc = "Restart Neovim (:restart)",
+})

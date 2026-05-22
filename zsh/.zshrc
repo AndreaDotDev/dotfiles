@@ -25,6 +25,11 @@ alias ls="eza --icons=always"
 alias cd="z"
 eval "$(zoxide init zsh)"
 
+# new move to folder just created function
+mkcd() {
+  mkdir -p "$1" && cd "$1"
+}
+
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
@@ -50,5 +55,11 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-# Added by Windsurf
-export PATH="/Users/acolombo/.codeium/windsurf/bin:$PATH"
+export PATH="/Users/acolombo/.local/bin:$PATH"
+
+# bun completions
+[ -s "/Users/acolombo/.bun/_bun" ] && source "/Users/acolombo/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

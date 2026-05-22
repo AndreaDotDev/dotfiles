@@ -5,7 +5,7 @@ if not vim.loop.fs_stat(lazypath) then
 		"clone",
 		"--filter=blob:none",
 		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
+		"--branch=stable",
 		lazypath,
 	})
 end
@@ -16,9 +16,9 @@ require("config.options")
 require("config.keymaps")
 
 require("lazy").setup({
-	{ import = "plugins" },
-	{ import = "plugins.lsp" },
-}, {
+  spec = {
+    { import = "plugins" },
+  },
 	checker = {
 		enabled = true,
 		notify = false,
@@ -27,3 +27,5 @@ require("lazy").setup({
 		notify = false,
 	},
 })
+
+require("config.lsp")
