@@ -13,10 +13,17 @@ plugins=(git zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
-
 # ---- Custom Aliases ----
 alias e='exit'
 alias n='nvim'
+
+# Firefox
+alias ffd='open -na Firefox --args -P daily'
+alias ffp='open -na Firefox --args -P pentest'
+alias ffdev='open -na "Firefox Developer Edition" --args -P dev'
+
+# throwaway profile, deleted by hand or on reboot
+fftmp() { open -na Firefox --args --profile "$(mktemp -d)"; }
 
 # Better ls 
 alias ls="eza --icons=always"
@@ -24,6 +31,8 @@ alias ls="eza --icons=always"
 # Better cd
 alias cd="z"
 eval "$(zoxide init zsh)"
+
+# ---- Custom Aliases ----
 
 # new move to folder just created function
 mkcd() {
@@ -45,10 +54,10 @@ export NVM_DIR="$HOME/.nvm"
 # Corepack environment variable
 export COREPACK_ENABLE_AUTO_PIN=0
 
-
 PATH=~/.console-ninja/.bin:$PATH
+
 # pnpm
-export PNPM_HOME="/Users/acolombo/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

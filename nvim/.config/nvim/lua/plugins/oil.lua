@@ -17,12 +17,12 @@ return {
 				-- "mtime",
 			},
 			keymaps = {
-				vim.keymap.set("n", "-", "<CMD>Oil --float <CR>", { desc = "Open parent directory" }),
 				["q"] = "actions.close",
 			},
 			float = {
-				-- Padding around the floating window
-				padding = 10,
+				padding = 2,
+				max_width = 0.8, -- 80% of the screen width
+				max_height = 0.8, -- 80% of the screen height
 				border = "rounded",
 			},
 		})

@@ -9,6 +9,8 @@ keymap.set("i", "jk", "<ESC>", { desc = "Exit insert mode with jk" })
 keymap.set("n", "L", "$", { desc = "Go to last char of line" })
 keymap.set("n", "H", "_", { desc = "Go to First char of line" })
 
+-- Padding around the floating window
+
 -- window management
 keymap.set("n", "<leader>sv", "<C-w>v", { desc = "Split window vertically" }) -- split window vertically
 keymap.set("n", "<leader>sh", "<C-w>s", { desc = "Split window horizontally" }) -- split window horizontally
@@ -34,7 +36,10 @@ vim.keymap.set("n", "<C-j>", "<Cmd>wincmd j<CR>", { silent = true })
 vim.keymap.set("n", "<C-h>", "<Cmd>wincmd h<CR>", { silent = true })
 vim.keymap.set("n", "<C-l>", "<Cmd>wincmd l<CR>", { silent = true })
 
+-- oil
+vim.keymap.set("n", "-", "<Cmd>Oil --float <CR>", { desc = "Open parent directory" })
+
 -- restart command keymap
 vim.keymap.set("n", "<Leader>re", "<cmd>restart<cr>", {
-  desc = "Restart Neovim (:restart)",
+	desc = "Restart Neovim (:restart)",
 })
