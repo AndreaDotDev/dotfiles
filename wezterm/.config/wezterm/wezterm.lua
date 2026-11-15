@@ -20,8 +20,6 @@ config.color_scheme = "MARDUK ALT"
 
 -- ── Window ──────────────────────────────────────────────────────────────
 config.enable_tab_bar = false
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 30 -- frosted-glass effect behind the window
 config.window_decorations = "RESIZE"
 config.default_cursor_style = "BlinkingBlock"
 config.initial_cols = 250
