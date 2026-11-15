@@ -121,7 +121,10 @@ alias e='exit'
 alias n='nvim'
 
 # Better ls
-alias ls="eza --icons=always"
+alias ls="eza --icons=auto --group-directories-first"
+alias ll='eza -lh --icons=auto --group-directories-first --git --time-style=relative --hyperlink'
+alias la='ll -a'
+alias lt='eza --tree --level=2 --icons=auto --git-ignore'
 
 # Better cd
 alias cd="z"
