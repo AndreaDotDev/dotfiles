@@ -1,0 +1,14 @@
+# zsh plugins, managed by antidote (https://antidote.sh)
+# Order matters: compinit runs in .zshrc before these are loaded.
+
+# Tab completion menu rendered with fzf (must load before widget-wrapping plugins)
+Aloxaf/fzf-tab
+
+# Ghost-text suggestions from history (→ or Ctrl-E to accept)
+zsh-users/zsh-autosuggestions
+
+# Colors commands as you type (red = command not found)
+zsh-users/zsh-syntax-highlighting
+
+# Type a prefix, then ↑/↓ to cycle through matching history (must load after syntax-highlighting)
+zsh-users/zsh-history-substring-search

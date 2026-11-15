@@ -1,0 +1,84 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Uses the terminal's ANSI palette (red, blue, ...) instead of hex colors,
+# so the prompt follows whatever WezTerm color scheme is active.
+
+add_newline = true
+command_timeout = 1000
+
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$python\
+$nodejs\
+$bun\
+$docker_context\
+$cmd_duration
+$character"""
+
+right_format = "$status$jobs"
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[directory]
+style = "bold cyan"
+truncation_length = 4
+truncate_to_repo = true
+truncation_symbol = "…/"
+read_only = " 󰌾"
+
+[git_branch]
+symbol = " "
+style = "bold purple"
+format = "[on](dimmed) [$symbol$branch(:$remote_branch)]($style) "
+
+[git_status]
+style = "bold yellow"
+format = "([$all_status$ahead_behind]($style) )"
+conflicted = "="
+ahead = "⇡${count}"
+behind = "⇣${count}"
+diverged = "⇕⇡${ahead_count}⇣${behind_count}"
+untracked = "?${count}"
+stashed = "≡"
+modified = "!${count}"
+staged = "+${count}"
+renamed = "»${count}"
+deleted = "✘${count}"
+
+[git_state]
+style = "bold red"
+
+[python]
+symbol = " "
+style = "bold yellow"
+format = '[via](dimmed) [${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+
+[nodejs]
+symbol = " "
+style = "bold green"
+format = "[via](dimmed) [$symbol($version )]($style)"
+
+[bun]
+symbol = " "
+format = "[via](dimmed) [$symbol($version )]($style)"
+
+[docker_context]
+symbol = " "
+
+[cmd_duration]
+min_time = 2000
+style = "bold yellow"
+format = "[took](dimmed) [ $duration]($style)"
+
+[status]
+disabled = false
+symbol = "✘ "
+format = "[$symbol$status]($style)"
+
+[jobs]
+symbol = " "
