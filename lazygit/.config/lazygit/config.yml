@@ -1,0 +1,33 @@
+# lazygit: Kanagawa Dragon
+# Loaded via LG_CONFIG_FILE (set in .zshrc), because on macOS lazygit
+# otherwise reads ~/Library/Application Support/lazygit/config.yml.
+gui:
+  nerdFontsVersion: "3"
+  border: rounded
+  theme:
+    activeBorderColor:
+      - "#8ba4b0"
+      - bold
+    inactiveBorderColor:
+      - "#625e5a"
+    searchingActiveBorderColor:
+      - "#c4b28a"
+      - bold
+    optionsTextColor:
+      - "#8ba4b0"
+    selectedLineBgColor:
+      - "#282727"
+    cherryPickedCommitFgColor:
+      - "#8ba4b0"
+    cherryPickedCommitBgColor:
+      - "#393836"
+    markedBaseCommitFgColor:
+      - "#8ba4b0"
+    markedBaseCommitBgColor:
+      - "#c4b28a"
+    unstagedChangesColor:
+      - "#c4746e"
+    defaultFgColor:
+      - "#c5c9c5"
+  authorColors:
+    "*": "#a292a3"

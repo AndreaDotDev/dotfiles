@@ -74,6 +74,7 @@ antidote load "$HOME/.zsh_plugins.txt" "$ZSH_CACHE_DIR/zsh_plugins.zsh"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#625e5a' # Kanagawa Dragon dim gray
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 
 # ── Key bindings ────────────────────────────────────────────────────────
@@ -97,9 +98,16 @@ zle -N edit-command-line
 bindkey '^X^E' edit-command-line             # Ctrl-X Ctrl-E: edit command in nvim
 
 # ── Tools ───────────────────────────────────────────────────────────────
+# Config locations (keep everything under ~/.config, stowed from dotfiles)
+export EZA_CONFIG_DIR="$HOME/.config/eza"                    # eza theme.yml
+export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml"     # lazygit (default is ~/Library/Application Support)
+
 # fzf: Ctrl-R history · Ctrl-T files · Alt-C directories
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
-export FZF_DEFAULT_OPTS='--height=50% --layout=reverse --border=rounded --info=inline'
+export FZF_DEFAULT_OPTS="--height=50% --layout=reverse --border=rounded --info=inline \
+  --color=fg:#c5c9c5,bg:-1,hl:#c4b28a,fg+:#c5c9c5,bg+:#282727,hl+:#e6c384,gutter:-1 \
+  --color=info:#8992a7,prompt:#8ba4b0,pointer:#c4746e,marker:#87a987,spinner:#a292a3 \
+  --color=header:#737c73,border:#393836,label:#8ba4b0,query:#c5c9c5,separator:#393836,scrollbar:#393836"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:200 {}'"
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
