@@ -25,27 +25,28 @@ alias ffdev='open -na "Firefox Developer Edition" --args -P dev'
 # throwaway profile, deleted by hand or on reboot
 fftmp() { open -na Firefox --args --profile "$(mktemp -d)"; }
 
-# Better ls 
+# Better ls
 alias ls="eza --icons=always"
 
 # Better cd
 alias cd="z"
 eval "$(zoxide init zsh)"
 
-# ---- Custom Aliases ----
-
 # new move to folder just created function
 mkcd() {
   mkdir -p "$1" && cd "$1"
 }
 
+# Claude Code with GLM settings
+alias glm='claude --settings ~/.claude/glm.json'
+
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/acolombo/Lavoro/Sesamo/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/acolombo/Lavoro/Sesamo/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/Lavoro/Sesamo/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Lavoro/Sesamo/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/acolombo/Lavoro/Sesamo/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/acolombo/Lavoro/Sesamo/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/Lavoro/Sesamo/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Lavoro/Sesamo/google-cloud-sdk/completion.zsh.inc"; fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -64,11 +65,12 @@ case ":$PATH:" in
 esac
 # pnpm end
 
-export PATH="/Users/acolombo/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 # bun completions
-[ -s "/Users/acolombo/.bun/_bun" ] && source "/Users/acolombo/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
