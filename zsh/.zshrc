@@ -43,10 +43,10 @@ alias glm='claude --settings ~/.claude/glm.json'
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/Lavoro/Sesamo/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Lavoro/Sesamo/google-cloud-sdk/path.zsh.inc"; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f "$HOME/Lavoro/Sesamo/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/Lavoro/Sesamo/google-cloud-sdk/completion.zsh.inc"; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
