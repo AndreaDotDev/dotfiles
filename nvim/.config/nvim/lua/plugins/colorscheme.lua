@@ -1,42 +1,22 @@
--- Kanagawa Dragon: the same palette is used by WezTerm, tmux, eza, bat, fzf and lazygit.
+-- Black Metal — Marduk (alt): near-black navy bg, crisp white, grays + one teal accent.
+-- The same palette is used by WezTerm, tmux, eza, bat, fzf, lazygit and starship
+-- (ports taken from the plugin's extras/ folder).
 return {
-	"rebelot/kanagawa.nvim",
+	"metalelf0/black-metal-theme-neovim",
 	lazy = false,
 	priority = 1000,
-	opts = {
-		theme = "dragon",
-		background = { dark = "dragon", light = "lotus" },
-		transparent = true, -- let WezTerm's opacity/blur show through
-		colors = {
-			theme = {
-				all = {
-					ui = { bg_gutter = "none" }, -- no separate background for the sign/number column
-				},
+	config = function()
+		require("black-metal").setup({
+			theme = "marduk",
+			variant = "dark",
+			alt_bg = true, -- the "alt" variant: #060b12 instead of pure black
+			transparent = true, -- let WezTerm's opacity/blur show through
+			plain_float = true, -- floats (Oil, hover, Telescope) use borders, no bg
+			cursorline_gutter = false,
+			code_style = {
+				comments = "italic",
 			},
-		},
-		overrides = function(colors)
-			local theme = colors.theme
-			return {
-				-- transparent floats (Oil, LSP hover, diagnostics) to match the editor
-				NormalFloat = { bg = "none" },
-				FloatBorder = { bg = "none" },
-				FloatTitle = { bg = "none" },
-
-				-- Telescope: borderless-looking, transparent
-				TelescopeNormal = { bg = "none" },
-				TelescopeBorder = { fg = theme.ui.bg_p2, bg = "none" },
-				TelescopeTitle = { fg = theme.ui.special, bold = true },
-
-				-- completion menu (blink.cmp)
-				Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
-				PmenuSel = { fg = "none", bg = theme.ui.bg_p2 },
-				PmenuSbar = { bg = theme.ui.bg_m1 },
-				PmenuThumb = { bg = theme.ui.bg_p2 },
-			}
-		end,
-	},
-	config = function(_, opts)
-		require("kanagawa").setup(opts)
-		vim.cmd.colorscheme("kanagawa-dragon")
+		})
+		require("black-metal").load()
 	end,
 }

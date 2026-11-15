@@ -1,0 +1,12 @@
+# Global ruff defaults, used when a project has no pyproject.toml [tool.ruff] / ruff.toml.
+# A project's own config always replaces this file entirely.
+line-length = 88
+
+[lint]
+# ruff's defaults (pyflakes + core pycodestyle) plus:
+#   I  = import sorting (isort)   UP = pyupgrade (modern syntax)   B = bugbear (likely bugs)
+extend-select = ["I", "UP", "B"]
+
+[format]
+quote-style = "double"
+docstring-code-format = true

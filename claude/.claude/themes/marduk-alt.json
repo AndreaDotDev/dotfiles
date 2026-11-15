@@ -1,0 +1,51 @@
+{
+  "name": "Black Metal: Marduk (alt)",
+  "base": "dark",
+  "overrides": {
+    "claude": "#5f8787",
+    "claudeShimmer": "#87a9a9",
+    "text": "#f1f1f1",
+    "inverseText": "#060b12",
+    "inactive": "#888888",
+    "inactiveShimmer": "#aaaaaa",
+    "subtle": "#505050",
+    "suggestion": "#a5aaa7",
+    "permission": "#aaaaaa",
+    "permissionShimmer": "#c1c1c1",
+    "remember": "#9b99a3",
+
+    "success": "#ddeecc",
+    "error": "#e78a43",
+    "warning": "#fbcb97",
+    "warningShimmer": "#fde3c6",
+    "merged": "#9b8d7f",
+
+    "promptBorder": "#505050",
+    "promptBorderShimmer": "#888888",
+    "planMode": "#a5aaa7",
+    "autoAccept": "#c1c1c1",
+    "bashBorder": "#9b8d7f",
+    "ide": "#888888",
+    "fastMode": "#fbcb97",
+    "fastModeShimmer": "#fde3c6",
+
+    "diffAdded": "#1c2416",
+    "diffAddedWord": "#33422a",
+    "diffAddedDimmed": "#12160f",
+    "diffRemoved": "#2e170f",
+    "diffRemovedWord": "#4e2616",
+    "diffRemovedDimmed": "#1a0e0a",
+
+    "userMessageBackground": "#11161e",
+    "userMessageBackgroundHover": "#171d26",
+    "bashMessageBackgroundColor": "#141412",
+    "memoryBackgroundColor": "#11161e",
+    "selectionBg": "#2a2a2a",
+    "composerSidebarBackground": "#0a0f17",
+
+    "rate_limit_fill": "#5f8787",
+    "rate_limit_empty": "#2a2a2a",
+    "briefLabelYou": "#aaaaaa",
+    "briefLabelClaude": "#5f8787"
+  }
+}

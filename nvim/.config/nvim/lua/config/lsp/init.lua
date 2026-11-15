@@ -5,6 +5,8 @@ require("config.lsp.servers.css_ls")
 require("config.lsp.servers.tailwindcss_ls")
 require("config.lsp.servers.json_ls")
 require("config.lsp.servers.eslint_ls")
+require("config.lsp.servers.basedpyright")
+require("config.lsp.servers.ruff")
 
 -- Enable all servers
 vim.lsp.enable({
@@ -14,6 +16,8 @@ vim.lsp.enable({
 	"tailwindcss_ls",
 	"json_ls",
 	"eslint_ls",
+	"basedpyright",
+	"ruff",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {

@@ -74,7 +74,7 @@ antidote load "$HOME/.zsh_plugins.txt" "$ZSH_CACHE_DIR/zsh_plugins.zsh"
 
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=50
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#625e5a' # Kanagawa Dragon dim gray
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#505050' # Marduk comment gray
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 
 # ── Key bindings ────────────────────────────────────────────────────────
@@ -105,9 +105,9 @@ export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml"     # lazygit (default 
 # fzf: Ctrl-R history · Ctrl-T files · Alt-C directories
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 export FZF_DEFAULT_OPTS="--height=50% --layout=reverse --border=rounded --info=inline \
-  --color=fg:#c5c9c5,bg:-1,hl:#c4b28a,fg+:#c5c9c5,bg+:#282727,hl+:#e6c384,gutter:-1 \
-  --color=info:#8992a7,prompt:#8ba4b0,pointer:#c4746e,marker:#87a987,spinner:#a292a3 \
-  --color=header:#737c73,border:#393836,label:#8ba4b0,query:#c5c9c5,separator:#393836,scrollbar:#393836"
+  --color=fg:#c1c1c1,bg:-1,hl:#5f8787:bold,fg+:#f1f1f1,bg+:#2a2a2a,hl+:#5f8787:bold,gutter:-1 \
+  --color=info:#505050,prompt:#5f8787,pointer:#f1f1f1,marker:#999999,spinner:#999999 \
+  --color=header:#999999,border:#2a2a2a,label:#5f8787,query:#f1f1f1,separator:#2a2a2a,scrollbar:#505050" # Black Metal Marduk (alt)
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers --line-range=:200 {}'"
 export FZF_ALT_C_COMMAND='fd --type d --hidden --follow --exclude .git'
