@@ -30,11 +30,7 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 vim.keymap.set("v", "<C-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move line up" })
 vim.keymap.set("v", "<C-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true, desc = "Move line down" })
 
--- Use Ctrl + [hjkl] to select the active split
-vim.keymap.set("n", "<C-k>", "<Cmd>wincmd k<CR>", { silent = true })
-vim.keymap.set("n", "<C-j>", "<Cmd>wincmd j<CR>", { silent = true })
-vim.keymap.set("n", "<C-h>", "<Cmd>wincmd h<CR>", { silent = true })
-vim.keymap.set("n", "<C-l>", "<Cmd>wincmd l<CR>", { silent = true })
+-- Ctrl + [hjkl] to move between splits (and tmux panes): see plugins/vim-tmux-navigator.lua
 
 -- oil
 vim.keymap.set("n", "-", "<Cmd>Oil --float <CR>", { desc = "Open parent directory" })

@@ -1,38 +1,42 @@
+-- Kanagawa Dragon: the same palette is used by WezTerm, tmux, eza, bat, fzf and lazygit.
 return {
-	"nyoom-engineering/oxocarbon.nvim",
+	"rebelot/kanagawa.nvim",
 	lazy = false,
 	priority = 1000,
-	build = false,
-	config = function()
-		-- Make the background transparent so the WezTerm opacity/blur shows through
-		vim.api.nvim_create_autocmd("ColorScheme", {
-			callback = function()
-				local groups = {
-					"Normal",
-					"NormalNC",
-					"NormalFloat",
-					"FloatBorder",
-					"SignColumn",
-					"LineNr",
-					"CursorLineNr",
-					"FoldColumn",
-					"EndOfBuffer",
-					"StatusLine",
-					"StatusLineNC",
-					"WinSeparator",
-					"TelescopeNormal",
-					"TelescopeBorder",
-					"NeoTreeNormal",
-					"NeoTreeNormalNC",
-					"NvimTreeNormal",
-				}
-				for _, group in ipairs(groups) do
-					vim.api.nvim_set_hl(0, group, { bg = "none" })
-				end
-			end,
-		})
+	opts = {
+		theme = "dragon",
+		background = { dark = "dragon", light = "lotus" },
+		transparent = true, -- let WezTerm's opacity/blur show through
+		colors = {
+			theme = {
+				all = {
+					ui = { bg_gutter = "none" }, -- no separate background for the sign/number column
+				},
+			},
+		},
+		overrides = function(colors)
+			local theme = colors.theme
+			return {
+				-- transparent floats (Oil, LSP hover, diagnostics) to match the editor
+				NormalFloat = { bg = "none" },
+				FloatBorder = { bg = "none" },
+				FloatTitle = { bg = "none" },
 
-		vim.opt.background = "dark" -- Oxocarbon has dark and light versions; this picks dark
-		vim.cmd("colorscheme oxocarbon")
+				-- Telescope: borderless-looking, transparent
+				TelescopeNormal = { bg = "none" },
+				TelescopeBorder = { fg = theme.ui.bg_p2, bg = "none" },
+				TelescopeTitle = { fg = theme.ui.special, bold = true },
+
+				-- completion menu (blink.cmp)
+				Pmenu = { fg = theme.ui.shade0, bg = theme.ui.bg_p1 },
+				PmenuSel = { fg = "none", bg = theme.ui.bg_p2 },
+				PmenuSbar = { bg = theme.ui.bg_m1 },
+				PmenuThumb = { bg = theme.ui.bg_p2 },
+			}
+		end,
+	},
+	config = function(_, opts)
+		require("kanagawa").setup(opts)
+		vim.cmd.colorscheme("kanagawa-dragon")
 	end,
 }
