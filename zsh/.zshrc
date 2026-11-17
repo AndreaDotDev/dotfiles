@@ -101,6 +101,7 @@ bindkey '^X^E' edit-command-line             # Ctrl-X Ctrl-E: edit command in nv
 # Config locations (keep everything under ~/.config, stowed from dotfiles)
 export EZA_CONFIG_DIR="$HOME/.config/eza"                    # eza theme.yml
 export LG_CONFIG_FILE="$HOME/.config/lazygit/config.yml"     # lazygit (default is ~/Library/Application Support)
+export CLAUDE_CODE_TMUX_TRUECOLOR=1                           # Claude Code drops to 256 colors inside tmux without this
 
 # fzf: Ctrl-R history · Ctrl-T files · Alt-C directories
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
